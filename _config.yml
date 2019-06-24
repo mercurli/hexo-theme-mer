@@ -1,0 +1,26 @@
+# hexo-theme-mer
+
+# nav
+nav:
+  Home: /
+  Archives: /archives
+  # Tags: /tags
+  About: /about
+
+# widget
+widget:
+  - categories
+  - tags
+  - info
+
+# favicon
+favicon: /favicon.png
+
+# 头像
+avatar: /assets/img/avatar.png
+
+# info
+info:
+  email: mercurli@qq.com
+  github: https://github.com/mercurli
+  

@@ -1,0 +1,21 @@
+<section class="articel-content">
+	<article class="article-post item-container">
+		<header class="article-header">
+			<h1 class="article-title text-center"><%= page.title %></h1>
+			<p>
+				<% if (page.date) {%>
+				<time datetime="<%= page.date %>" class="article-date iconfont icon-date"><%= full_date(page.date) %></time>
+				<% } %>
+			<% if (page.tags) {%>
+			<% page.tags.each(function(tag) { %>
+				<a href="<%- url_for(tag.path) %>#more" class="tag iconfont icon-tag"><%= tag.name %></a>
+			<% }) %>
+			<% } %>
+			</p>
+		</header>
+		<div class="article-body article-entry"><%- page.content %></div>
+		<footer class="article-footer">
+			<p>--- End ---</p>
+		</footer>
+	</article>
+</section>

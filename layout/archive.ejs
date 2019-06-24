@@ -1,0 +1,27 @@
+<section class="content">
+<% let last; %>
+<% page.posts.each(function(post, i){ %>
+<% let year = post.date.year(); %>
+<% if (last != year) { %>
+	<% if (last) { %></section><% } %>
+	<section class="achive-item item-container">
+		<p class="achive-year"><%= year %></p>
+<% } %>
+		<article class="achive-article">
+			<p class="achive-article-title">
+				<a href="<%- url_for(post.path) %>"><%= post.title %></a>
+			</p>
+			<div class="achive-article-meta">
+				<time datetime="<%= date_xml(post.date) %>" class="article-date iconfont icon-date"><%= full_date(post.date, 'YYYY-MM-DD') %></time>
+				<% post.tags.each(function(tag) { %>
+				<a href="<%- url_for(tag.path) %>" class="article-tag iconfont icon-tag"><%= tag.name %></a>
+				<% }) %>
+			</div>
+		</article>
+	<% last = year %>
+<% }) %>
+<% if (page.posts.length) { %>
+	</section>
+<% } %>
+</section>
+<%- partial('_partial/aside') %>

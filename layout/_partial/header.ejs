@@ -1,0 +1,12 @@
+<header class="header">
+	<div class="container">
+		<nav class="nav">
+			<% for (name in theme.nav) { %>
+			<a class="nav-item" href="<%- url_for(theme.nav[name]) %>"><%= name %></a>
+			<% } %>
+		</nav>
+		<div class="avatar">
+			<a href="<%- url_for(theme.nav.About) %>"><img src="<%- theme.avatar %>"></a>
+		</div>
+	</div>
+</header>

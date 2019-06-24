@@ -1,0 +1,39 @@
+<aside class="sidebar">
+	<% if (theme.widget.includes('categories')) { %>
+	<div class="widget">
+		<div class="widget-header">
+			<span>分类</span>
+		</div>
+		<div class="widget-content">
+			<%- list_categories({show_count: theme.show_count}) %>
+		</div>
+	</div>
+	<% } %>
+	<% if (theme.widget.includes('tags')) { %>
+	<div class="widget">
+		<div class="widget-header">
+			<span>标签</span>
+		</div>
+		<div class="widget-content">
+			<%- list_tags({show_count: theme.show_count}) %>
+		</div>
+	</div>
+	<% } %>
+	<% if (theme.widget.includes('info')) { %>
+	<div class="widget">
+		<div class="widget-header">
+			<span>联系我</span>
+		</div>
+		<div class="widget-content widget-info">
+			<p>
+				<span class="iconfont icon-email"></span>
+				<a href="mailto:<%= theme.info.email %>" target="_blank">E-Mail</a>
+			</p>
+			<p>
+				<span class="iconfont icon-github"></span>
+				<a href="<%= theme.info.github %>" target="_blank">GiHub</a>
+			</p>
+		</div>
+	</div>
+	<% } %>
+</aside>
